@@ -1,0 +1,32 @@
+# Dependencies
+node_modules
+/node_modules
+
+# Logs
+npm-debug.log*
+*.log
+.npm/*.log
+
+# Testing
+/coverage
+/test/coverage
+
+# Production
+/build
+/dist
+
+# Environment variables
+.env
+.env.*
+
+# IDEs and other system files
+.idea/
+.vscode/
+.DS_Store
+*.suo
+*.user
+*.pdb
+*.pid
+*.seed
+*.pack
+# other system files...

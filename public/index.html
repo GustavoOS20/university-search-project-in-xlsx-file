@@ -4,19 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maquininha do Mao</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+
 </head>
     <body>
-        <form>
-            <div id="campo_pesquisar">
-                <label for="pesquisar">Pesquisar</label>
-                <input type="text" name="pesquisar" id="pesquisar">
+        <div>
+            <div id="logo">
+                <img src="google_logo.svg" alt="">
             </div>
-            <div>
-                <label for="filtro1">Nome</label>
-                <input type="checkbox" name="ativo" id="filtro1">
-                <label for="filtro2">Filtro</label>
-                <input type="checkbox" name="ativo" id="filtro2">
+            <form id="form-pesquisar">
+                <div id="campo_pesquisar">
+                    <label for="pesquisar"></label>
+                        <div id="wrapper-pesquisar">
+                            <span class="material-symbols-outlined">search </span>
+                            <input type="text" name="pesquisar" id="pesquisar">
+                        </div>
+                </div>
+            </form>
+            <form id="form-filtrar">
+                <div id="campo_filtros">
+                    <label for="filtroQui">QUI</label>
+                    <input type="checkbox" name="ativo" id="filtroQui">
+                    <label for="filtroDcc">DCC</label>
+                    <input type="checkbox" name="ativo" id="filtroDcc">
+                    <label for ="filtroMat">MAT</label>
+                    <input type="checkbox" name="ativo" id="filtroMat">
+                    <label for="filtroFis">FIS</label>
+                    <input type="checkbox" name="ativo" id="filtroFis">
+                    <label for="filtroIce">ICE</label>
+                    <input type="checkbox" name="ativo" id="filtroIce">
+                    <label for="filtroEst">EST</label>
+                    <input type="checkbox" name="ativo" id="filtroEst">
+                </div>
+            </form>
+
+            <div id="campo_lista">
+                <ul id="list_add">
+
+                </ul>
             </div>
-        </form>
+        </div>
     </body>
 </html>

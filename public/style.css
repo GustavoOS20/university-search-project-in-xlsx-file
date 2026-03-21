@@ -1,0 +1,72 @@
+
+html {
+    background: #222;
+}
+
+#logo img {
+    visibility: hidden;
+}
+
+#campo_pesquisar label{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#campo_pesquisar {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1920px) {
+    #wrapper-pesquisar input {
+        border: none;
+        width: 740px;
+        height: 15px;
+    }
+
+    #logo {
+        mask-image: url('google_logo.svg');
+        background-color: #ffffff;
+        mask-size: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #wrapper-pesquisar input {
+        border: none;
+        width: 320px;
+        height: 15px;
+    }
+    #logo {
+        mask-image: url('google_logo.svg');
+        mask-size: 100%;
+        background-color: #ffffff;
+
+    }
+}
+
+#wrapper-pesquisar input:focus {
+    outline: none;
+}
+
+#campo_pesquisar #wrapper-pesquisar {
+    display: flex;
+    align-items: center;
+    border: black 1px solid;
+    border-radius: 100px;
+    margin-left: 5px;
+    padding: 6px;
+
+}
+#campo_filtros{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#campo_filtros label{
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+}
+#campo_filtros input{
+    margin-left: 5px;
+}

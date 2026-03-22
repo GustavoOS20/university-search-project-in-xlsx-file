@@ -47,11 +47,10 @@ html {
 
 @media only screen and (max-width: 1920px) {
     #campo_lista {
-        width: 75vh;
+        width: 95vh;
         height: 50vh;
         border-radius: 10px;
         background-color: white;
-        margin-top: 20px;
         display: flex;
         margin: 0 auto;
         align-items: center;
@@ -64,15 +63,19 @@ html {
     #lista-colunas{
         width: 98%;
         margin-top: 0.7%;
-
-
     }
     .maiores-list{
         width: 130px;
+        min-width: 130px;
+        max-width: 130px;
+        box-sizing: border-box;
     }
 
     .colunes-list{
         width: 80px;
+        min-width: 80px;
+        max-width: 80px;
+        box-sizing: border-box;
     }
 
     #lista-colunas div{
@@ -80,10 +83,18 @@ html {
         justify-content: center;
         align-items: center;
         border: 1px solid #000000;
+        box-sizing: border-box;
     }
 
     #lista-colunas div span{
+        box-sizing: border-box;
         padding: 10px;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
     }
 
     #wrapper-pesquisar input {
@@ -114,10 +125,17 @@ html {
     }
     .maiores-linha-list{
         width: 130px;
+        min-width: 130px;
+        max-width: 130px;
+        box-sizing: border-box;
+
     }
 
     .linha-list{
         width: 80px;
+        min-width: 80px;
+        max-width: 80px;
+        box-sizing: border-box;
     }
 
     .maiores-list-item, .menores-list-item{
@@ -127,6 +145,18 @@ html {
         flex-direction: column;
         border: 1px solid #000000;
         padding: 4px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .maiores-list-item span, .menores-list-item span {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
     }
 }
 
@@ -152,15 +182,19 @@ html {
     #lista-colunas{
         width: 98%;
         margin-top: 0.7%;
-
-
     }
     .maiores-list{
         width: 130px;
+        min-width: 130px;
+        max-width: 130px;
+        box-sizing: border-box;
     }
 
     .colunes-list{
         width: 80px;
+        min-width: 80px;
+        max-width: 80px;
+        box-sizing: border-box;
     }
 
     #lista-colunas div{
@@ -168,10 +202,16 @@ html {
         justify-content: center;
         align-items: center;
         border: 1px solid #000000;
+        box-sizing: border-box;
     }
 
     #lista-colunas div span{
         padding: 10px;
+        width: 100%;
+        text-align: center;
+        word-break: break-word;
+        overflow: hidden;
+        box-sizing: border-box;
     }
 
     #wrapper-linha-list{
@@ -181,10 +221,16 @@ html {
 
     .maiores-linha-list{
         width: 130px;
+        min-width: 130px;
+        max-width: 130px;
+        box-sizing: border-box;
     }
 
     .linha-list{
         width: 80px;
+        min-width: 80px;
+        max-width: 80px;
+        box-sizing: border-box;
     }
 
     .maiores-list-item, .menores-list-item{
@@ -194,6 +240,15 @@ html {
         flex-direction: column;
         border: 1px solid #000000;
         padding: 4px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .maiores-list-item span, .menores-list-item span {
+        width: 100%;
+        text-align: center;
+        word-break: break-word;
+        box-sizing: border-box;
     }
 }
 

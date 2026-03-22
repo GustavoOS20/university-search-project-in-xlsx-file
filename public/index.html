@@ -25,30 +25,29 @@
                                 <img src="logo_lupa.svg" alt="">
                             </div>
                             <input type="text" name="pesquisar" id="pesquisar">
-
                         </div>
                 </div>
             </form>
             <form id="form-filtrar">
                 <div id="campo_filtros">
                     <label for="filtroQui">QUI</label>
-                    <input type="checkbox" name="ativo" id="filtroQui" class="checkbox-filter">
+                    <input type="checkbox" name="ativo" id="filtroQui" class="checkbox-filter" value="QUI">
                     <label for="filtroDcc">DCC</label>
-                    <input type="checkbox" name="ativo" id="filtroDcc" class="checkbox-filter">
+                    <input type="checkbox" name="ativo" id="filtroDcc" class="checkbox-filter" value="DCC">
                     <label for ="filtroMat">MAT</label>
-                    <input type="checkbox" name="ativo" id="filtroMat" class="checkbox-filter">
+                    <input type="checkbox" name="ativo" id="filtroMat" class="checkbox-filter" value="MAT">
                     <label for="filtroFis">FIS</label>
-                    <input type="checkbox" name="ativo" id="filtroFis" class="checkbox-filter">
+                    <input type="checkbox" name="ativo" id="filtroFis" class="checkbox-filter" value="FIS">
                     <label for="filtroIce">ICE</label>
-                    <input type="checkbox" name="ativo" id="filtroIce" class="checkbox-filter">
+                    <input type="checkbox" name="ativo" id="filtroIce" class="checkbox-filter" value="ICE">
                     <label for="filtroEst">EST</label>
-                    <input type="checkbox" name="ativo" id="filtroEst" class="checkbox-filter">
+                    <input type="checkbox" name="ativo" id="filtroEst" class="checkbox-filter" value="EST">
                 </div>
             </form>
 
             <div id="campo_lista">
                 <div id="lista-colunas">
-                    <div class="colunes-list" role="columnheader" id="coluna-materia">
+                    <div class="maiores-list" role="columnheader" id="coluna-materia">
                         <span>Matéria</span>
                     </div>
                     <div class="colunes-list" role="columnheader" id="coluna-codigo">
@@ -63,15 +62,80 @@
                     <div class="colunes-list" role="columnheader" id="coluna-fim">
                         <span>Fim</span>
                     </div>
-                    <div class="colunes-list" role="columnheader" id="coluna-dias">
+                    <div class="maiores-list" role="columnheader" id="coluna-dias">
                         <span>Dias</span>
                     </div>
-                    <div class="colunes-list" role="columnheader" id="coluna-sala">
+                    <div class="maiores-list" role="columnheader" id="coluna-sala">
                         <span>Sala</span>
                     </div>
                 </div>
-                <div class="linha-list" role="columnheader"></div>
+                <div id="wrapper-linha-list" role="columnheader">
+                    <div class="maiores-linha-list" role="columnheader" >
+                        <div class="maiores-list-item">
+                            <span>Dias</span>
+                        </div>
+                        <div class="maiores-list-item">
+                            <span>Turma</span>
+                        </div>
+                    </div>
+                    <div class="linha-list" role="columnheader" >
+                        <div class="menores-list-item">
+                            <span>Dias</span>
+                        </div>
+                        <div class="menores-list-item">
+                            <span>Turma</span>
+                        </div>
+
+                    </div>
+                    <div class="linha-list" role="columnheader" >
+                        <div class="menores-list-item">
+                            <span>Dias</span>
+                        </div>
+                        <div class="menores-list-item">
+                            <span>Turma</span>
+                        </div>
+
+                    </div>
+                    <div class="linha-list" role="columnheader" >
+                        <div class="menores-list-item">
+                            <span>Dias</span>
+                        </div>
+                        <div class="menores-list-item">
+                            <span>Turma</span>
+                        </div>
+
+                    </div>
+                    <div class="linha-list" role="columnheader" >
+                        <div class="menores-list-item">
+                            <span>Dias</span>
+                        </div>
+                        <div class="menores-list-item">
+                            <span>Turma</span>
+                        </div>
+
+                    </div>
+                    <div class="maiores-linha-list" role="columnheader" >
+                        <div class="maiores-list-item">
+                            <span>Dias</span>
+                        </div>
+                        <div class="maiores-list-item">
+                            <span>Turma</span>
+                        </div>
+
+                    </div>
+                    <div class="maiores-linha-list" role="columnheader" >
+                        <div class="maiores-list-item">
+                            <span>Dias</span>
+                        </div>
+                        <div class="maiores-list-item">
+                            <span>Turma</span>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
+    <script src="../Search.js"></script>
+    <script src="../Filter.js"></script>
     </body>
 </html>

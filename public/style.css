@@ -1,8 +1,36 @@
 
 html {
-    background: #222;
+    background: #444444;
 }
 
+#logo-pai{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    width: 740px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 60px;
+}
+
+#logo-lupa{
+    -webkit-mask-image: url('logo_lupa.svg');
+    background-color: #444;
+    mask-size: 95%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+}
+
+#logo-lupa img{
+    visibility: hidden;
+}
 #logo img {
     visibility: hidden;
 }
@@ -18,16 +46,39 @@ html {
 }
 
 @media only screen and (max-width: 1920px) {
+    #campo_lista {
+        border-radius: 10px;
+        background-color: white;
+        margin-top: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000000;
+        padding: 3px;
+    }
+
     #wrapper-pesquisar input {
         border: none;
-        width: 740px;
+        width: 700px;
         height: 15px;
+        background: transparent;
+    }
+
+    #wrapper-pesquisar input:focus {
+        outline: none;
+        border: none;
+        background: transparent;
+        font-family: 'Roboto', sans-serif;
     }
 
     #logo {
         mask-image: url('google_logo.svg');
         background-color: #ffffff;
-        mask-size: 100%;
+        mask-size: 50%;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: center;
     }
 }
 
@@ -39,20 +90,20 @@ html {
     }
     #logo {
         mask-image: url('google_logo.svg');
-        mask-size: 100%;
+        mask-size: 80%;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
         background-color: #ffffff;
 
     }
 }
 
-#wrapper-pesquisar input:focus {
-    outline: none;
-}
+
 
 #campo_pesquisar #wrapper-pesquisar {
     display: flex;
     align-items: center;
-    border: black 1px solid;
+    background-color: #ffffff;
     border-radius: 100px;
     margin-left: 5px;
     padding: 6px;
@@ -65,8 +116,53 @@ html {
 }
 #campo_filtros label{
     font-family: 'Roboto', sans-serif;
+    color: white;
     padding: 5px;
 }
-#campo_filtros input{
-    margin-left: 5px;
+
+#campo_filtros label{
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    background-color: rgb(48, 48, 48);
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #ffffff;
+    border: none;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid #303030FF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.linha-list{
+    border: 3px solid #221616;
+}
+
+#lista-colunas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

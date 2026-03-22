@@ -8,44 +8,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
 
 </head>
     <body>
         <div>
-            <div id="logo">
-                <img src="google_logo.svg" alt="">
+            <div id="logo-pai">
+                <div id="logo">
+                    <img src="google_logo.svg" alt="">
+                </div>
             </div>
             <form id="form-pesquisar">
                 <div id="campo_pesquisar">
                     <label for="pesquisar"></label>
                         <div id="wrapper-pesquisar">
-                            <span class="material-symbols-outlined">search </span>
+                            <div id="logo-lupa">
+                                <img src="logo_lupa.svg" alt="">
+                            </div>
                             <input type="text" name="pesquisar" id="pesquisar">
+
                         </div>
                 </div>
             </form>
             <form id="form-filtrar">
                 <div id="campo_filtros">
                     <label for="filtroQui">QUI</label>
-                    <input type="checkbox" name="ativo" id="filtroQui">
+                    <input type="checkbox" name="ativo" id="filtroQui" class="checkbox-filter">
                     <label for="filtroDcc">DCC</label>
-                    <input type="checkbox" name="ativo" id="filtroDcc">
+                    <input type="checkbox" name="ativo" id="filtroDcc" class="checkbox-filter">
                     <label for ="filtroMat">MAT</label>
-                    <input type="checkbox" name="ativo" id="filtroMat">
+                    <input type="checkbox" name="ativo" id="filtroMat" class="checkbox-filter">
                     <label for="filtroFis">FIS</label>
-                    <input type="checkbox" name="ativo" id="filtroFis">
+                    <input type="checkbox" name="ativo" id="filtroFis" class="checkbox-filter">
                     <label for="filtroIce">ICE</label>
-                    <input type="checkbox" name="ativo" id="filtroIce">
+                    <input type="checkbox" name="ativo" id="filtroIce" class="checkbox-filter">
                     <label for="filtroEst">EST</label>
-                    <input type="checkbox" name="ativo" id="filtroEst">
+                    <input type="checkbox" name="ativo" id="filtroEst" class="checkbox-filter">
                 </div>
             </form>
 
             <div id="campo_lista">
-                <ul id="list_add">
-
-                </ul>
+                <div id="lista-colunas">
+                    <div class="colunes-list" role="columnheader" id="coluna-materia">
+                        <span>Matéria</span>
+                    </div>
+                    <div class="colunes-list" role="columnheader" id="coluna-codigo">
+                        <span>Código</span>
+                    </div>
+                    <div class="colunes-list" role="columnheader" id="coluna-turma">
+                        <span>Turma</span>
+                    </div>
+                    <div class="colunes-list" role="columnheader" id="coluna-inicio">
+                        <span>Início</span>
+                    </div>
+                    <div class="colunes-list" role="columnheader" id="coluna-fim">
+                        <span>Fim</span>
+                    </div>
+                    <div class="colunes-list" role="columnheader" id="coluna-dias">
+                        <span>Dias</span>
+                    </div>
+                    <div class="colunes-list" role="columnheader" id="coluna-sala">
+                        <span>Sala</span>
+                    </div>
+                </div>
+                <div class="linha-list" role="columnheader"></div>
             </div>
         </div>
     </body>

@@ -6,7 +6,7 @@ class search {
         const valorRecebido = this.inputSearch.value;
 
         try {
-            const resposta = await fetch('http://localhost:3000/', {
+            const resposta = await fetch('http://localhost:3000/api/pesquisa/dados', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -22,11 +22,13 @@ class search {
         }
     }
 
+    async recebendoListaInteira(){
+
+    }
 
     enviarLista() {
-        //vou mudar para um for each
-        for (let i = 1; i < this.listSearch.length; i++) {
-            const listaF = this.listSearch.find(item => item?.id === i)
+        this.listSearch.forEach((item) => {
+            const listaF = item;
             if (listaF?.categoria === "Matéria" || listaF?.categoria === "Dias" || listaF?.categoria === "Sala") {
                 let novaSpan = document.createElement('span');
                 novaSpan.textContent = listaF?.nome;
@@ -47,6 +49,6 @@ class search {
                 const lista = document.getElementsByClassName('maiores-linha-list');
                 lista.appendChild(novaDiv);
             }
-        }
+        })
     }
 }

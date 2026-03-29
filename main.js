@@ -7,7 +7,7 @@ import {fileURLToPath} from 'url';
 import path from 'path'
 const app = express();
 const port = 3000;
-import routersMain from'./routes/projeto.routes.js'
+import routersMain from './src/routes/projeto.routes.js'
 
 app.use(express.json());
 app.use('/api', routersMain);

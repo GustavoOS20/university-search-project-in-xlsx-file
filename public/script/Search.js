@@ -21,91 +21,80 @@ class search {
     }
 
     async recebendoListaInteira(){
-        fetch('http://localhost:3000/api/search/dadosTotais').then(resposta => {
-            return resposta.json();
-        }).then(dadosRecebido => {
-            this.listSearch = dadosRecebido;
-        }).catch(error => {
-            console.error("o envio do valor da pesquisa:", error);
-        })
+        try {
+            const resposta = await fetch('http://localhost:3000/api/dados');
+            if (!resposta.ok) {
+                new Error(`Erro na requisição: ${resposta.status}`);
+            }
+            this.listSearch = await resposta.json();
+        } catch (error) {
+            console.error("Erro ao buscar a lista:", error);
+        }
     }
 
     enviarLista() {
         this.listSearch.forEach((item) => {
-            const chaveMaior = "materia";
-            const chaveMaior2 = "dias";
-            const chaveMaior3 = "sala";
-            const chaveMenor = "codigo";
-            const chaveMenor2 = "turma";
-            const chaveMenor3 = "inicio";
-            const chaveMenor4 = "fim";
+            const chavesMaiores = ["materia", "dias", "sala"];
+            const chavesMenores = ["codigo", "turma", "inicio", "fim"];
             const listaF = item;
-            if (chaveMaior in listaF || chaveMaior2 in listaF || chaveMaior3 in listaF) {
-                if (chaveMaior in listaF) {
-                    let novaSpan = document.createElement('span');
-                    novaSpan.textContent = listaF?.materia;
-                    let novaDiv = document.createElement('div');
-                    novaDiv.classList.add('maiores-list-item');
-                    novaDiv.appendChild(novaSpan);
-                    const lista = document.getElementById('materia');
-                    lista.appendChild(novaDiv);
-                }
-                if (chaveMaior2 in listaF){
-                    let novaSpan = document.createElement('span');
-                    novaSpan.textContent = listaF?.dias;
-                    let novaDiv = document.createElement('div');
-                    novaDiv.classList.add('maiores-list-item');
-                    novaDiv.appendChild(novaSpan);
-                    const lista = document.getElementById('dias');
-                    lista.appendChild(novaDiv);
-                }
-                if (chaveMaior3 in listaF){
-                    let novaSpan = document.createElement('span');
-                    novaSpan.textContent = listaF?.sala;
-                    let novaDiv = document.createElement('div');
-                    novaDiv.classList.add('maiores-list-item');
-                    novaDiv.appendChild(novaSpan);
-                    const lista = document.getElementById('sala');
-                    lista.appendChild(novaDiv);
-                }
-            } else {
-                if (chaveMenor in listaF) {
-                    let novaSpan = document.createElement('span');
-                    novaSpan.textContent = listaF?.codigo
-                    let novaDiv = document.createElement('div');
-                    novaDiv.classList.add('colunes-list');
-                    novaDiv.appendChild(novaSpan);
-                    const lista = document.getElementById('codigo');
-                    lista.appendChild(novaDiv);
-                }
-                if (chaveMenor2 in listaF){
-                    let novaSpan = document.createElement('span');
-                    novaSpan.textContent = listaF?.turma
-                    let novaDiv = document.createElement('div');
-                    novaDiv.classList.add('colunes-list');
-                    novaDiv.appendChild(novaSpan);
-                    const lista = document.getElementById('turma');
-                    lista.appendChild(novaDiv);
-                }
-                if (chaveMenor3 in listaF){
-                    let novaSpan = document.createElement('span');
-                    novaSpan.textContent = listaF?.inicio
-                    let novaDiv = document.createElement('div');
-                    novaDiv.classList.add('colunes-list');
-                    novaDiv.appendChild(novaSpan);
-                    const lista = document.getElementById('inicio');
-                    lista.appendChild(novaDiv);
-                }
-                if (chaveMenor4 in listaF){
-                    let novaSpan = document.createElement('span');
-                    novaSpan.textContent = listaF?.fim
-                    let novaDiv = document.createElement('div');
-                    novaDiv.classList.add('colunes-list');
-                    novaDiv.appendChild(novaSpan);
-                    const lista = document.getElementById('fim');
-                    lista.appendChild(novaDiv);
-                }
+
+            if ("materia" in listaF) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = listaF.materia;
+                let novaDiv = document.createElement('div');
+                novaDiv.classList.add('maiores-list-item');
+                novaDiv.appendChild(novaSpan);
+                document.getElementById('materia').appendChild(novaDiv);
             }
-        })
+            if ("dias" in listaF) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = listaF.dias;
+                let novaDiv = document.createElement('div');
+                novaDiv.classList.add('maiores-list-item');
+                novaDiv.appendChild(novaSpan);
+                document.getElementById('dias').appendChild(novaDiv);
+            }
+            if ("sala" in listaF) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = listaF.sala;
+                let novaDiv = document.createElement('div');
+                novaDiv.classList.add('maiores-list-item');
+                novaDiv.appendChild(novaSpan);
+                document.getElementById('sala').appendChild(novaDiv);
+            }
+
+            if ("codigo" in listaF) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = listaF.codigo;
+                let novaDiv = document.createElement('div');
+                novaDiv.classList.add('colunes-list');
+                novaDiv.appendChild(novaSpan);
+                document.getElementById('codigo').appendChild(novaDiv);
+            }
+            if ("turma" in listaF) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = listaF.turma;
+                let novaDiv = document.createElement('div');
+                novaDiv.classList.add('colunes-list');
+                novaDiv.appendChild(novaSpan);
+                document.getElementById('turma').appendChild(novaDiv);
+            }
+            if ("inicio" in listaF) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = listaF.inicio;
+                let novaDiv = document.createElement('div');
+                novaDiv.classList.add('colunes-list');
+                novaDiv.appendChild(novaSpan);
+                document.getElementById('inicio').appendChild(novaDiv);
+            }
+            if ("fim" in listaF) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = listaF.fim;
+                let novaDiv = document.createElement('div');
+                novaDiv.classList.add('colunes-list');
+                novaDiv.appendChild(novaSpan);
+                document.getElementById('fim').appendChild(novaDiv);
+            }
+        });
     }
 }

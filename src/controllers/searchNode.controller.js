@@ -14,6 +14,7 @@ class SearchNodeController {
     }
     planilhaInteira = (req, res) => {
         try{
+            xlsxService.lerPlanilhas();
             const dados = xlsxService.dadosCompletosPlanilha;
             res.status(200).json(dados);
         }catch (error){

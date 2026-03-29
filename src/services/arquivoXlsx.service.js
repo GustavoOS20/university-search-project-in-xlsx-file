@@ -1,9 +1,11 @@
-import XLSX from 'xlsx'
+import fs from 'fs';
+import XLSX from 'xlsx';
 class XLSXService {
     dadosCompletosPlanilha;
     lerPlanilhas() {
         try {
-            const arquivoExcel = XLSX.readFile('C:/planilha/classroomsICEX.xlsx')
+            const fileBuffer = fs.readFileSync('./src/classroomsICEX NEW.xlsx');
+            const arquivoExcel = XLSX.read(fileBuffer, { type: 'buffer' });
             const nomeAba = arquivoExcel.SheetNames[0];
             const selecionarAba = arquivoExcel.Sheets[nomeAba];
             const dadosEmJson = XLSX.utils.sheet_to_json(selecionarAba);

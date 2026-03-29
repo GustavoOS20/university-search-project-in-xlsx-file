@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function () {
     console.log("O DOM está pronto!");
-   search = new search();
-   search.recebendoListaInteira();
-   search.enviarLista()
+    const minhaBusca = new search();
+    await minhaBusca.recebendoListaInteira();
+    minhaBusca.enviarLista();
 });

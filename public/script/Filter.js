@@ -8,6 +8,7 @@ function aplicarFiltros() {
         }
     });
 
+
     console.log("Filtros ativos:", filtrosSelecionados);
 }
 

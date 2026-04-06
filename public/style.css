@@ -65,9 +65,9 @@ html {
         margin-top: 0.7%;
     }
     .maiores-list{
-        width: 130px;
+        width: 170px;
         min-width: 130px;
-        max-width: 130px;
+        max-width: 170px;
         box-sizing: border-box;
     }
 
@@ -124,9 +124,9 @@ html {
         margin-top: 0.7%;
     }
     .maiores-linha-list{
-        width: 130px;
+        width: 170px;
         min-width: 130px;
-        max-width: 130px;
+        max-width: 170px;
         box-sizing: border-box;
 
     }

@@ -34,8 +34,6 @@ class search {
 
     enviarLista() {
         this.listSearch.forEach((item) => {
-            const chavesMaiores = ["materia", "dias", "sala"];
-            const chavesMenores = ["codigo", "turma", "inicio", "fim"];
             const listaF = item;
 
             if ("materia" in listaF) {
@@ -67,7 +65,7 @@ class search {
                 let novaSpan = document.createElement('span');
                 novaSpan.textContent = listaF.codigo;
                 let novaDiv = document.createElement('div');
-                novaDiv.classList.add('colunes-list');
+                novaDiv.classList.add('menores-list-item');
                 novaDiv.appendChild(novaSpan);
                 document.getElementById('codigo').appendChild(novaDiv);
             }
@@ -75,7 +73,7 @@ class search {
                 let novaSpan = document.createElement('span');
                 novaSpan.textContent = listaF.turma;
                 let novaDiv = document.createElement('div');
-                novaDiv.classList.add('colunes-list');
+                novaDiv.classList.add('menores-list-item');
                 novaDiv.appendChild(novaSpan);
                 document.getElementById('turma').appendChild(novaDiv);
             }
@@ -83,7 +81,7 @@ class search {
                 let novaSpan = document.createElement('span');
                 novaSpan.textContent = listaF.inicio;
                 let novaDiv = document.createElement('div');
-                novaDiv.classList.add('colunes-list');
+                novaDiv.classList.add('menores-list-item');
                 novaDiv.appendChild(novaSpan);
                 document.getElementById('inicio').appendChild(novaDiv);
             }
@@ -91,7 +89,7 @@ class search {
                 let novaSpan = document.createElement('span');
                 novaSpan.textContent = listaF.fim;
                 let novaDiv = document.createElement('div');
-                novaDiv.classList.add('colunes-list');
+                novaDiv.classList.add('menores-list-item');
                 novaDiv.appendChild(novaSpan);
                 document.getElementById('fim').appendChild(novaDiv);
             }

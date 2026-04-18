@@ -47,7 +47,7 @@ html {
 
 @media only screen and (max-width: 1920px) {
     #campo_lista {
-        width: 95vh;
+        width: 115vh;
         height: 50vh;
         border-radius: 10px;
         background-color: white;
@@ -65,16 +65,16 @@ html {
         margin-top: 0.7%;
     }
     .maiores-list{
-        width: 170px;
+        width: 220px;
         min-width: 130px;
-        max-width: 170px;
+        max-width: 220px;
         box-sizing: border-box;
     }
 
     .colunes-list{
-        width: 80px;
+        width: 100px;
         min-width: 80px;
-        max-width: 80px;
+        max-width: 100px;
         box-sizing: border-box;
     }
 
@@ -123,18 +123,19 @@ html {
         width: 98%;
         margin-top: 0.7%;
     }
-    .maiores-linha-list{
-        width: 170px;
-        min-width: 130px;
-        max-width: 170px;
-        box-sizing: border-box;
 
+    .maiores-list-item{
+        width: 220px;
+        min-width: 130px;
+        max-width: 220px;
+        box-sizing: border-box;
     }
 
-    .linha-list{
-        width: 80px;
+    .menores-list-item{
+        display: flex;
+        width: 100px;
         min-width: 80px;
-        max-width: 80px;
+        max-width: 100px;
         box-sizing: border-box;
     }
 
@@ -150,7 +151,7 @@ html {
     }
 
     .maiores-list-item span, .menores-list-item span {
-        width: 100%;
+        width: 98%;
         text-align: center;
         box-sizing: border-box;
         white-space: nowrap;
@@ -185,14 +186,14 @@ html {
     }
     .maiores-list{
         width: 130px;
-        min-width: 130px;
+        min-width: 100px;
         max-width: 130px;
         box-sizing: border-box;
     }
 
     .colunes-list{
         width: 80px;
-        min-width: 80px;
+        min-width: 60px;
         max-width: 80px;
         box-sizing: border-box;
     }
@@ -214,21 +215,16 @@ html {
         box-sizing: border-box;
     }
 
-    #wrapper-linha-list{
-        width: 98%;
-        margin-top: 0.7%;
-    }
-
-    .maiores-linha-list{
+    .maiores-list-item{
         width: 130px;
-        min-width: 130px;
+        min-width: 100px;
         max-width: 130px;
         box-sizing: border-box;
     }
 
-    .linha-list{
+    .menores-list-item{
         width: 80px;
-        min-width: 80px;
+        min-width: 60px;
         max-width: 80px;
         box-sizing: border-box;
     }
@@ -323,6 +319,18 @@ input[type="checkbox"]:checked::before {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
+.linha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+}
+
+#wrapper-linha-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

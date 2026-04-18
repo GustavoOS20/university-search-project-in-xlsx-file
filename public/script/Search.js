@@ -1,25 +1,6 @@
 class search {
+
     listSearch = [];
-    inputSearch = document.getElementById('pesquisar');
-    async recebendoPesquisa() {
-        const valorRecebido = this.inputSearch.value;
-
-        try {
-            const resposta = await fetch('http://localhost:3000/api/pesquisa/dados', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(valorRecebido),
-            });
-            const respostaRecebida = await resposta.json();
-            this.listSearch = respostaRecebida;
-            console.log(respostaRecebida)
-        } catch (error) {
-            console.error("o envio do valor da pesquisa:", error);
-        }
-    }
-
     async recebendoListaInteira(){
         try {
             const resposta = await fetch('http://localhost:3000/api/dados');
@@ -33,66 +14,95 @@ class search {
     }
 
     enviarLista() {
-        this.listSearch.forEach((item) => {
-            const listaF = item;
+        this.addItensLista(this.listSearch);
+    }
 
-            if ("materia" in listaF) {
+    addItensLista(listaF){
+
+        listaF.forEach((item) => {
+            let wrapper = document.getElementById("wrapper-linha-list")
+            let novaDivPai = document.createElement('div');
+            novaDivPai.classList.add('linha');
+            wrapper.appendChild(novaDivPai);
+            if ("materia" in item) {
                 let novaSpan = document.createElement('span');
-                novaSpan.textContent = listaF.materia;
+                novaSpan.textContent = item.materia;
                 let novaDiv = document.createElement('div');
+                novaDivPai.appendChild(novaDiv)
                 novaDiv.classList.add('maiores-list-item');
                 novaDiv.appendChild(novaSpan);
-                document.getElementById('materia').appendChild(novaDiv);
-            }
-            if ("dias" in listaF) {
-                let novaSpan = document.createElement('span');
-                novaSpan.textContent = listaF.dias;
-                let novaDiv = document.createElement('div');
-                novaDiv.classList.add('maiores-list-item');
-                novaDiv.appendChild(novaSpan);
-                document.getElementById('dias').appendChild(novaDiv);
-            }
-            if ("sala" in listaF) {
-                let novaSpan = document.createElement('span');
-                novaSpan.textContent = listaF.sala;
-                let novaDiv = document.createElement('div');
-                novaDiv.classList.add('maiores-list-item');
-                novaDiv.appendChild(novaSpan);
-                document.getElementById('sala').appendChild(novaDiv);
             }
 
-            if ("codigo" in listaF) {
+            if ("codigo" in item) {
                 let novaSpan = document.createElement('span');
-                novaSpan.textContent = listaF.codigo;
+                novaSpan.textContent = item.codigo;
                 let novaDiv = document.createElement('div');
+                novaDivPai.appendChild(novaDiv)
                 novaDiv.classList.add('menores-list-item');
                 novaDiv.appendChild(novaSpan);
-                document.getElementById('codigo').appendChild(novaDiv);
             }
-            if ("turma" in listaF) {
+
+            if ("turma" in item) {
                 let novaSpan = document.createElement('span');
-                novaSpan.textContent = listaF.turma;
+                novaSpan.textContent = item.turma;
                 let novaDiv = document.createElement('div');
+                novaDivPai.appendChild(novaDiv)
                 novaDiv.classList.add('menores-list-item');
                 novaDiv.appendChild(novaSpan);
-                document.getElementById('turma').appendChild(novaDiv);
             }
-            if ("inicio" in listaF) {
+
+            if ("inicio" in item) {
                 let novaSpan = document.createElement('span');
-                novaSpan.textContent = listaF.inicio;
+                novaSpan.textContent = item.inicio;
                 let novaDiv = document.createElement('div');
+                novaDivPai.appendChild(novaDiv)
                 novaDiv.classList.add('menores-list-item');
                 novaDiv.appendChild(novaSpan);
-                document.getElementById('inicio').appendChild(novaDiv);
             }
-            if ("fim" in listaF) {
+
+            if ("fim" in item) {
                 let novaSpan = document.createElement('span');
-                novaSpan.textContent = listaF.fim;
+                novaSpan.textContent = item.fim;
                 let novaDiv = document.createElement('div');
+                novaDivPai.appendChild(novaDiv)
                 novaDiv.classList.add('menores-list-item');
                 novaDiv.appendChild(novaSpan);
-                document.getElementById('fim').appendChild(novaDiv);
             }
+
+            if ("dias" in item) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = item.dias;
+                let novaDiv = document.createElement('div');
+                novaDivPai.appendChild(novaDiv)
+                novaDiv.classList.add('maiores-list-item');
+                novaDiv.appendChild(novaSpan);
+            }
+            if ("sala" in item) {
+                let novaSpan = document.createElement('span');
+                novaSpan.textContent = item.sala;
+                let novaDiv = document.createElement('div');
+                novaDivPai.appendChild(novaDiv)
+                novaDiv.classList.add('maiores-list-item');
+                novaDiv.appendChild(novaSpan);
+            }
+        })
+
+    }
+
+    filtrarLista(){
+        const inputSearch = document.getElementById('pesquisar');
+        const card = document.querySelectorAll('.linha');
+        card.forEach(element => {
+            let contemTermo = false;
+            const span = element.querySelectorAll('span');
+            span.forEach(spanElement => {
+                const busca = spanElement.textContent.toLowerCase();
+                if(busca.includes(inputSearch.value.toLowerCase())) {
+                    contemTermo = true;
+                }
+            })
+            element.style.display = contemTermo ? "" : "none";
+
         });
     }
 }
